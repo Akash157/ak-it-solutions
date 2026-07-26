@@ -1,5 +1,5 @@
 import PageLayout from "@/components/layout/PageLayout";
-
+import Testimonials from "@/components/home/Testimonials";
 import Hero from "@/components/home/Hero";
 import Clients from "@/components/home/Clients";
 import Services from "@/components/home/Services";
@@ -8,25 +8,32 @@ import Stats from "@/components/home/Stats";
 import Portfolio from "@/components/home/Portfolio";
 import TechStack from "@/components/home/TechStack";
 import Process from "@/components/home/Process";
+import FAQ from "@/components/home/FAQ";
 
 export default function Home() {
   return (
     <PageLayout>
-      <Hero />
 
-      <Clients />
+  <Hero />
 
-      <Services />
+  <Clients />
 
-      <WhyChoose />
+  <Services />
 
-      <Stats />
+  <WhyChoose />
 
-      <Portfolio />
+  <Stats />
 
-      <TechStack />
+  <Portfolio />
 
-      <Process />
-    </PageLayout>
+  <TechStack />
+
+  <Testimonials />
+
+  <FAQ />
+
+  <Process />
+
+</PageLayout>
   );
 }
