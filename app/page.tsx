@@ -9,6 +9,7 @@ import Portfolio from "@/components/home/Portfolio";
 import TechStack from "@/components/home/TechStack";
 import Process from "@/components/home/Process";
 import FAQ from "@/components/home/FAQ";
+import CTA from "@/components/home/CTA";
 
 export default function Home() {
   return (
@@ -33,6 +34,8 @@ export default function Home() {
   <FAQ />
 
   <Process />
+  
+  <CTA />
 
 </PageLayout>
   );
