@@ -1,12 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  Facebook,
   Mail,
   Phone,
   MapPin,
   Globe,
   ArrowUpRight,
+  ExternalLink,
 } from "lucide-react";
 
 const services = [
@@ -145,9 +145,9 @@ export default function Footer() {
             <a
               href="https://web.facebook.com/AKITSolution"
               target="_blank"
-              className="flex items-center gap-3 hover:text-[#39D353]"
-            >
-              <Facebook size={18} />
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:text-[#39D353]">
+              <ExternalLink size={18} />
               Facebook
             </a>
 
