@@ -1,42 +1,19 @@
 import PageLayout from "@/components/layout/PageLayout";
-import Testimonials from "@/components/home/Testimonials";
-import Hero from "@/components/home/Hero";
-import Clients from "@/components/home/Clients";
-import Services from "@/components/home/Services";
-import WhyChoose from "@/components/home/WhyChoose";
-import Stats from "@/components/home/Stats";
+import PageHero from "@/components/ui/PageHero";
 import Portfolio from "@/components/home/Portfolio";
-import TechStack from "@/components/home/TechStack";
-import Process from "@/components/home/Process";
-import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 
-export default function Home() {
+export default function PortfolioPage() {
   return (
     <PageLayout>
+      <PageHero
+        title="Our Portfolio"
+        subtitle="Explore websites, networking, cloud, CCTV, cybersecurity and VoIP projects delivered by AK IT Solutions."
+      />
 
-  <Hero />
+      <Portfolio />
 
-  <Clients />
-
-  <Services />
-
-  <WhyChoose />
-
-  <Stats />
-
-  <Portfolio />
-
-  <TechStack />
-
-  <Testimonials />
-
-  <FAQ />
-
-  <Process />
-  
-  <CTA />
-
-</PageLayout>
+      <CTA />
+    </PageLayout>
   );
 }

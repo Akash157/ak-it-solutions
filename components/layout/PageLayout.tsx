@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
+import TopBar from "./TopBar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import WhatsAppButton from "../ui/WhatsAppButton";
 
 type Props = {
   children: ReactNode;
@@ -10,15 +10,13 @@ type Props = {
 export default function PageLayout({ children }: Props) {
   return (
     <>
+      <TopBar />
+
       <Navbar />
 
-      <main className="min-h-screen">
-        {children}
-      </main>
+      <main>{children}</main>
 
-      <WhatsAppButton />
-
-    <Footer />
+      <Footer />
     </>
   );
 }
