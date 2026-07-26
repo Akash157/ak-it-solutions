@@ -22,10 +22,10 @@ export default function Clients() {
   const items = [...logos, ...logos];
 
   return (
-    <section className="overflow-hidden bg-white py-20">
+    <section className="overflow-hidden bg-white py-24">
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="text-center">
+        <div className="mb-16 text-center">
 
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#0B7DDA]">
             Trusted By
@@ -35,28 +35,35 @@ export default function Clients() {
             Organizations We've Worked With
           </h2>
 
-          <p className="mx-auto mt-5 max-w-2xl text-slate-600">
-            From startups to established businesses, we deliver reliable
-            technology solutions that help organizations grow securely.
+          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+            We are proud to provide website development, networking,
+            cybersecurity, CCTV, cloud and VoIP solutions for businesses across
+            Pakistan.
           </p>
 
         </div>
 
-        <div className="relative mt-14 overflow-hidden">
+        <div className="relative overflow-hidden">
 
-          <div className="client-slider flex w-max items-center gap-16">
+          {/* Left Fade */}
+          <div className="pointer-events-none absolute left-0 top-0 z-10 h-full w-32 bg-gradient-to-r from-white to-transparent"></div>
+
+          {/* Right Fade */}
+          <div className="pointer-events-none absolute right-0 top-0 z-10 h-full w-32 bg-gradient-to-l from-white to-transparent"></div>
+
+          <div className="client-slider flex w-max items-center gap-14">
 
             {items.map((logo, index) => (
               <div
                 key={index}
-                className="flex h-24 w-52 items-center justify-center rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl"
+                className="flex h-24 items-center justify-center"
               >
                 <Image
                   src={`/images/clients/${logo}`}
                   alt={logo}
-                  width={180}
-                  height={80}
-                  className="h-14 w-auto object-contain grayscale transition duration-300 hover:grayscale-0"
+                  width={240}
+                  height={100}
+                  className="h-20 w-auto object-contain grayscale opacity-70 transition-all duration-300 hover:scale-110 hover:opacity-100 hover:grayscale-0"
                 />
               </div>
             ))}

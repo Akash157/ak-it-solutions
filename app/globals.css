@@ -112,12 +112,12 @@ body {
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50%));
   }
 }
 
 .client-slider {
-  animation: scrollLogos 35s linear infinite;
+  animation: scrollLogos 28s linear infinite;
 }
 
 .client-slider:hover {
