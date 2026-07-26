@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* ================================
+   Theme
+================================ */
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --primary: #0B7DDA;
+  --secondary: #39D353;
+  --dark: #0F172A;
+  --light: #F8FAFC;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0A0A0A;
+    --foreground: #EDEDED;
+  }
+}
+
+/* ================================
+   Base
+================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ================================
+   Reusable Classes
+================================ */
+
+.section {
+  @apply py-24;
+}
+
+.container-custom {
+  @apply mx-auto max-w-7xl px-6;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.card {
+  @apply rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ================================
+   Buttons
+================================ */
+
+.btn-primary {
+  @apply rounded-xl bg-[#0B7DDA] px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-blue-700;
+}
+
+.btn-outline {
+  @apply rounded-xl border border-[#0B7DDA] px-6 py-3 font-semibold text-[#0B7DDA] transition-all duration-300 hover:bg-[#0B7DDA] hover:text-white;
+}
+
+/* ================================
+   Animations
+================================ */
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
