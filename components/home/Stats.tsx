@@ -1,52 +1,79 @@
 "use client";
 
-import { Briefcase, Users, Clock3, Headphones } from "lucide-react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
+import {
+  Briefcase,
+  Users,
+  Headphones,
+  Award,
+} from "lucide-react";
 
 const stats = [
   {
     icon: Briefcase,
-    number: "150+",
+    value: 150,
+    suffix: "+",
     label: "Projects Completed",
   },
   {
     icon: Users,
-    number: "50+",
+    value: 50,
+    suffix: "+",
     label: "Happy Clients",
   },
   {
-    icon: Clock3,
-    number: "8+",
+    icon: Award,
+    value: 8,
+    suffix: "+",
     label: "Years Experience",
   },
   {
     icon: Headphones,
-    number: "24/7",
+    value: 24,
+    suffix: "/7",
     label: "Technical Support",
   },
 ];
 
 export default function Stats() {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
   return (
-    <section className="bg-[#0F172A] py-20 text-white">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 lg:grid-cols-4">
+    <section
+      ref={ref}
+      className="bg-[#0B7DDA] py-24 text-white"
+    >
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((item) => {
           const Icon = item.icon;
 
           return (
             <div
               key={item.label}
-              className="rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:bg-white/10"
+              className="rounded-3xl bg-white/10 p-8 text-center backdrop-blur-sm transition duration-300 hover:-translate-y-2 hover:bg-white/15"
             >
               <Icon
-                size={42}
-                className="mx-auto mb-4 text-[#39D353]"
+                size={44}
+                className="mx-auto mb-5 text-[#39D353]"
               />
 
-              <h3 className="text-4xl font-black">
-                {item.number}
-              </h3>
+              <h2 className="text-5xl font-black">
+                {inView ? (
+                  <CountUp
+                    end={item.value}
+                    duration={2}
+                  />
+                ) : (
+                  0
+                )}
+                {item.suffix}
+              </h2>
 
-              <p className="mt-2 text-slate-300">
+              <p className="mt-3 text-slate-200">
                 {item.label}
               </p>
             </div>
