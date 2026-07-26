@@ -6,25 +6,25 @@ const projects = [
   {
     name: "Riz Energy",
     category: "Energy Broker Website",
-    image: "/images/portfolio/rizenergy.jpg",
+    image: "/images/portfolio/rizenergy.png",
     url: "https://rizenergy.com",
   },
   {
     name: "Adam Technologies",
     category: "Corporate Website",
-    image: "/images/portfolio/adamtech.jpg",
+    image: "/images/portfolio/adamtech.png",
     url: "https://adamtechpk.com",
   },
   {
     name: "NexTech Live",
     category: "Technology Website",
-    image: "/images/portfolio/nextech.jpg",
+    image: "/images/portfolio/nextech.png",
     url: "http://www.nextechlive.com",
   },
   {
     name: "TOIT Training",
     category: "Training Institute",
-    image: "/images/portfolio/toit.jpg",
+    image: "/images/portfolio/toit.png",
     url: "https://www.toittraining.com",
   },
 ];
