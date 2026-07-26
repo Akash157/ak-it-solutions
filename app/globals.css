@@ -102,3 +102,24 @@ body {
 .float {
   animation: float 4s ease-in-out infinite;
 }
+/* ===========================
+   Client Logo Slider
+=========================== */
+
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.client-slider {
+  animation: scrollLogos 35s linear infinite;
+}
+
+.client-slider:hover {
+  animation-play-state: paused;
+}
