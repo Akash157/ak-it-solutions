@@ -27,11 +27,12 @@ export default function TechLogos() {
               className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white p-8 shadow-sm"
             >
               <Image
-                src={`/images/tech/${item}.png`}
+                src={`/images/tech/${item}.svg`}
                 alt={item}
                 width={70}
                 height={70}
-              />
+                className="h-16 w-auto object-contain"
+                />
             </div>
           ))}
 
