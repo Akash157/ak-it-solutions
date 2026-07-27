@@ -6,7 +6,7 @@ import { services } from "@/data/services";
 import PageLayout from "@/components/layout/PageLayout";
 import ServiceHero from "@/components/services/ServiceHero";
 import FeatureGrid from "@/components/services/FeatureGrid";
-import TechLogos from "@/components/services/TechLogos";
+import TechnologyLogos from "@/components/services/TechnologyLogos";
 import WhyChooseService from "@/components/services/WhyChooseService";
 import Process from "@/components/home/Process";
 import FAQ from "@/components/home/FAQ";
@@ -54,7 +54,6 @@ export default async function ServicePage({
 
   return (
     <PageLayout>
-
       <ServiceHero
         title={service.title}
         subtitle={service.subtitle}
@@ -65,11 +64,8 @@ export default async function ServicePage({
         items={service.features}
       />
 
-      <TechLogos />
-
-      <FeatureGrid
-        title="Technologies We Use"
-        items={service.technologies}
+      <TechnologyLogos
+        technologies={service.technologies}
       />
 
       <WhyChooseService />
@@ -79,7 +75,6 @@ export default async function ServicePage({
       <FAQ />
 
       <ServiceCTA />
-
     </PageLayout>
   );
 }
