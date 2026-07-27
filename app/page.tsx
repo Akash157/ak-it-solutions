@@ -1,5 +1,5 @@
 import PageLayout from "@/components/layout/PageLayout";
-
+import Testimonials from "@/components/home/Testimonials";
 import Hero from "@/components/home/Hero";
 import Clients from "@/components/home/Clients";
 import Services from "@/components/home/Services";
@@ -27,6 +27,12 @@ export default function Home() {
       <TechStack />
 
       <Portfolio />
+
+      <Testimonials />
+
+      <Industries />
+
+      <TechStack />
 
       <Process />
 

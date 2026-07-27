@@ -1,25 +1,23 @@
-"use client";
-
 import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Riz Nabi",
-    company: "Riz Energy LLC",
+    name: "Riz Energy",
+    role: "Energy Company",
     review:
-      "AK IT Solutions completely redesigned our website and delivered exactly what we needed. Professional communication and excellent technical expertise.",
+      "AK IT Solutions completely redesigned our website. The project was delivered professionally and exceeded our expectations.",
   },
   {
-    name: "Management Team",
-    company: "Adam Technologies",
+    name: "Adam Technologies",
+    role: "Technology Company",
     review:
-      "Their team provided outstanding support for our website and networking infrastructure. Highly recommended for reliable IT solutions.",
+      "Excellent communication, modern design and outstanding technical expertise. Highly recommended.",
   },
   {
-    name: "Operations",
-    company: "Genova IVF Labs",
+    name: "TOIT Training",
+    role: "Training Institute",
     review:
-      "Professional CCTV and VoIP deployment with excellent after-sales support. Everything was delivered on time.",
+      "Our new website is faster, easier to manage and looks fantastic. Great experience working with the team.",
   },
 ];
 
@@ -29,61 +27,51 @@ export default function Testimonials() {
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="text-center">
-
           <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#0B7DDA]">
             Testimonials
           </p>
 
-          <h2 className="mt-4 text-4xl font-bold text-slate-900">
+          <h2 className="mt-4 text-4xl font-black text-slate-900">
             What Our Clients Say
           </h2>
 
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">
-            We build long-term relationships by delivering reliable,
-            high-quality technology solutions.
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
+            We pride ourselves on building long-term relationships by delivering
+            reliable, high-quality IT solutions.
           </p>
-
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-3">
-
           {testimonials.map((item) => (
             <div
-              key={item.company}
-              className="rounded-3xl bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+              key={item.name}
+              className="rounded-3xl bg-white p-8 shadow-lg transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
             >
-              <div className="mb-5 flex">
-
-                {[1, 2, 3, 4, 5].map((star) => (
+              <div className="mb-6 flex gap-1">
+                {[...Array(5)].map((_, index) => (
                   <Star
-                    key={star}
+                    key={index}
                     size={20}
-                    fill="#FFD43B"
-                    color="#FFD43B"
+                    className="fill-yellow-400 text-yellow-400"
                   />
                 ))}
-
               </div>
 
               <p className="leading-8 text-slate-600">
                 "{item.review}"
               </p>
 
-              <div className="mt-8 border-t pt-6">
-
-                <h3 className="font-bold text-slate-900">
+              <div className="mt-8">
+                <h3 className="text-xl font-bold">
                   {item.name}
                 </h3>
 
-                <p className="text-[#0B7DDA]">
-                  {item.company}
+                <p className="text-slate-500">
+                  {item.role}
                 </p>
-
               </div>
-
             </div>
           ))}
-
         </div>
 
       </div>
