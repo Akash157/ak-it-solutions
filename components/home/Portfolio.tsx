@@ -91,15 +91,15 @@ export default function Portfolio() {
         <div className="mx-auto max-w-7xl px-6">
 
           <div className="text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#0B7DDA]">
+            <p className="text-sm font-bold uppercase tracking-[0.35em] text-blue-600">
               Portfolio
             </p>
 
-            <h2 className="mt-4 text-4xl font-black text-slate-900">
+            <h2 className="mt-4 text-4xl font-black text-black md:text-5xl">
               Our Recent Projects
             </h2>
 
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-700">
               Explore some of the solutions we've delivered across web development,
               networking, cloud, cybersecurity, CCTV and VoIP.
             </p>
