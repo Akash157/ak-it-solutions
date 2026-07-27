@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { ReactNode, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 type Props = {
   children: ReactNode;
@@ -14,22 +14,29 @@ export default function FadeIn({
   delay = 0,
   className = "",
 }: Props) {
+  const ref = useRef(null);
+
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "-100px",
+  });
+
   return (
     <motion.div
+      ref={ref}
       className={className}
       initial={{
         opacity: 0,
-        y: 30,
+        y: 40,
       }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.1,
-        margin: "-50px",
-      }}
+      animate={
+        isInView
+          ? {
+              opacity: 1,
+              y: 0,
+            }
+          : {}
+      }
       transition={{
         duration: 0.6,
         delay,
