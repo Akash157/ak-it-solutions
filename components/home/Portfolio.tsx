@@ -87,7 +87,7 @@ export default function Portfolio() {
 
   return (
     <section className="bg-slate-50 py-24">
-      <>
+      <FadeIn>
         <div className="mx-auto max-w-7xl px-6">
 
           <div className="text-center">
@@ -171,7 +171,7 @@ export default function Portfolio() {
           </div>
 
         </div>
-      </>
+      </FadeIn>
     </section>
   );
 }
