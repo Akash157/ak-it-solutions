@@ -1,12 +1,14 @@
 import PageLayout from "@/components/layout/PageLayout";
-import Testimonials from "@/components/home/Testimonials";
+
 import Hero from "@/components/home/Hero";
 import Clients from "@/components/home/Clients";
 import Services from "@/components/home/Services";
 import WhyChoose from "@/components/home/WhyChoose";
 import Stats from "@/components/home/Stats";
-import TechStack from "@/components/home/TechStack";
 import Portfolio from "@/components/home/Portfolio";
+import Testimonials from "@/components/home/Testimonials";
+import Industries from "@/components/home/Industries";
+import TechStack from "@/components/home/TechStack";
 import Process from "@/components/home/Process";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
@@ -23,8 +25,6 @@ export default function Home() {
       <WhyChoose />
 
       <Stats />
-
-      <TechStack />
 
       <Portfolio />
 
