@@ -1,81 +1,130 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  Globe,
+  Network,
+  Shield,
+  Camera,
+  Phone,
+  Cloud,
+  Search,
+  Briefcase,
+  ArrowRight,
+} from "lucide-react";
 
 import PageLayout from "@/components/layout/PageLayout";
-import ServiceHero from "@/components/services/ServiceHero";
-import FeatureGrid from "@/components/services/FeatureGrid";
 import ServiceCTA from "@/components/services/ServiceCTA";
-import FAQ from "@/components/home/FAQ";
-import Process from "@/components/home/Process";
 
 export const metadata: Metadata = {
-  title: "Website Development",
+  title: "Our Services | AK IT Solutions",
   description:
-    "Professional Website Development services by AK IT Solutions. Business websites, eCommerce, CMS, Next.js, WordPress and custom web applications.",
+    "Explore the complete range of IT services offered by AK IT Solutions including website development, networking, cyber security, CCTV, cloud solutions, VoIP and IT consultancy.",
 };
 
 const services = [
-  "Corporate Business Websites",
-  "Custom Web Applications",
-  "E-Commerce Stores",
-  "WordPress Development",
-  "Next.js Development",
-  "Landing Pages",
-  "Portfolio Websites",
-  "Website Maintenance",
+  {
+    title: "Website Development",
+    icon: Globe,
+    href: "/services/website-development",
+    description: "Modern business websites, eCommerce stores and custom web applications.",
+  },
+  {
+    title: "Networking",
+    icon: Network,
+    href: "/services/networking",
+    description: "Professional Cisco and MikroTik networking solutions.",
+  },
+  {
+    title: "Cloud Solutions",
+    icon: Cloud,
+    href: "/services/cloud-solutions",
+    description: "Microsoft 365, cloud migration and cloud infrastructure.",
+  },
+  {
+    title: "Cyber Security",
+    icon: Shield,
+    href: "/services/cyber-security",
+    description: "Firewalls, VPNs, endpoint protection and security audits.",
+  },
+  {
+    title: "CCTV Installation",
+    icon: Camera,
+    href: "/services/cctv-installation",
+    description: "Professional surveillance systems for homes and businesses.",
+  },
+  {
+    title: "VoIP / IP PBX",
+    icon: Phone,
+    href: "/services/voip-ip-pbx",
+    description: "Modern business communication systems.",
+  },
+  {
+    title: "SEO & Digital Marketing",
+    icon: Search,
+    href: "/services/seo-digital-marketing",
+    description: "Improve rankings and grow your online presence.",
+  },
+  {
+    title: "IT Consultancy",
+    icon: Briefcase,
+    href: "/services/it-consultancy",
+    description: "Expert IT planning and business technology consulting.",
+  },
 ];
 
-const technologies = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "WordPress",
-  "PHP",
-  "Node.js",
-  "MySQL",
-];
-
-const benefits = [
-  "Modern Responsive Design",
-  "SEO Optimized Structure",
-  "Fast Loading Performance",
-  "Secure Development",
-  "Mobile Friendly",
-  "Google Ready",
-  "Easy Content Management",
-  "One Year Support",
-];
-
-export default function WebsiteDevelopmentPage() {
+export default function ServicesPage() {
   return (
     <PageLayout>
+      <section className="bg-slate-950 py-28 text-white">
+        <div className="mx-auto max-w-7xl px-6 text-center">
+          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-[#39D353]">
+            Our Services
+          </p>
 
-      <ServiceHero
-        title="Website Development"
-        subtitle="We design and develop modern, fast and SEO-friendly websites that help businesses establish a strong online presence and generate more customers."
-      />
+          <h1 className="text-5xl font-black md:text-6xl">
+            Complete IT Solutions Under One Roof
+          </h1>
 
-      <FeatureGrid
-        title="What We Offer"
-        items={services}
-      />
+          <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
+            From website development to networking, cloud, cyber security,
+            CCTV and VoIP, we help businesses build reliable and scalable
+            technology solutions.
+          </p>
+        </div>
+      </section>
 
-      <FeatureGrid
-        title="Technologies We Use"
-        items={technologies}
-      />
+      <section className="py-24">
+        <div className="mx-auto grid max-w-7xl gap-8 px-6 md:grid-cols-2 xl:grid-cols-4">
+          {services.map((service) => {
+            const Icon = service.icon;
 
-      <FeatureGrid
-        title="Why Choose Our Development Services"
-        items={benefits}
-      />
+            return (
+              <Link
+                key={service.title}
+                href={service.href}
+                className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm transition hover:-translate-y-2 hover:shadow-xl"
+              >
+                <Icon className="mb-6 h-10 w-10 text-[#0B7DDA]" />
 
-      <Process />
+                <h2 className="text-2xl font-bold">
+                  {service.title}
+                </h2>
 
-      <FAQ />
+                <p className="mt-4 text-slate-600">
+                  {service.description}
+                </p>
+
+                <span className="mt-6 inline-flex items-center gap-2 font-semibold text-[#0B7DDA]">
+                  Learn More
+                  <ArrowRight size={18} />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
 
       <ServiceCTA />
-
     </PageLayout>
   );
 }
